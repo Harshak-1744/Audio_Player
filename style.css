@@ -1,0 +1,9 @@
+#audio-poster {
+    width: 300px;  
+    height: auto;
+    display: block;
+    margin: 10px auto;  
+}
+#audio-controls {
+    text-align: center;
+}
