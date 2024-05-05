@@ -7,3 +7,16 @@
 #audio-controls {
     text-align: center;
 }
+
+#progressContainer {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+#progressBar {
+    height: 100%;
+    background-color: #007bff;
+    width: 0%; 
+}
