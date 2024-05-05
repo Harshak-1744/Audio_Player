@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let audio = new Audio('http://localhost:5500/Pushpaa.mp3');
+    let audio = new Audio('http://localhost:5500/Audios/Pushpaa.mp3');
     let volumeControl = document.getElementById('volume');
     let muteButton = document.getElementById('mute');
 
