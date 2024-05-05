@@ -1,18 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let audio = new Audio('http://localhost:5500/Audios/Pushpaa.mp3');
+    let audio = new Audio('http://localhost:5500/Audios/Pushpaa.mp3'); 
     let volumeControl = document.getElementById('volume');
     let muteButton = document.getElementById('mute');
+    let playButton = document.getElementById("play");
+    let pauseButton = document.getElementById("pause");
     let currentTimeDisplay = document.getElementById("currentTime");
     let totalDurationDisplay = document.getElementById("totalDuration");
     let progressBar = document.getElementById("progressBar");
 
+    
     muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
 
-    document.getElementById("play").addEventListener("click", function() {
+    playButton.addEventListener("click", function() {
         audio.play();
     });
 
-    document.getElementById("pause").addEventListener("click", function() {
+    pauseButton.addEventListener("click", function() {
         audio.pause();
     });
 
@@ -26,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.volume = this.value;
         if (audio.volume > 0 && audio.muted) {
             audio.muted = false;
-            muteButton.textContent = 'Mute';
+            muteButton.textContent = 'Mute'; 
         }
     });
 
     muteButton.addEventListener('click', function() {
         audio.muted = !audio.muted;
-        this.textContent = audio.muted ? 'Unmute' : 'Mute';
+        this.textContent = audio.muted ? 'Unmute' : 'Mute'; 
     });
 
     audio.addEventListener("timeupdate", function() {
