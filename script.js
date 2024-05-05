@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalDurationDisplay = document.getElementById("totalDuration");
     let progressBar = document.getElementById("progressBar");
 
+    muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
+
     document.getElementById("play").addEventListener("click", function() {
         audio.play();
     });
@@ -22,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     volumeControl.addEventListener('input', function() {
         audio.volume = this.value;
+        if (audio.volume > 0 && audio.muted) {
+            audio.muted = false;
+            muteButton.textContent = 'Mute';
+        }
     });
 
     muteButton.addEventListener('click', function() {
