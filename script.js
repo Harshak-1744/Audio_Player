@@ -8,15 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalDurationDisplay = document.getElementById("totalDuration");
     let progressBar = document.getElementById("progressBar");
 
-    
-    muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
+   
+    muteButton.src = audio.muted ? 'https://img.icons8.com/ios/100/1A1A1A/mute--v1.png' : 'https://img.icons8.com/ios/100/1A1A1A/medium-volume--v1.png';
 
     playButton.addEventListener("click", function() {
         audio.play();
+        playButton.style.visibility = 'hidden';
+        pauseButton.style.visibility = 'visible';
     });
 
     pauseButton.addEventListener("click", function() {
         audio.pause();
+        playButton.style.visibility = 'visible';
+        pauseButton.style.visibility = 'hidden';
     });
 
     document.getElementById("reset").addEventListener("click", function() {
@@ -29,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.volume = this.value;
         if (audio.volume > 0 && audio.muted) {
             audio.muted = false;
-            muteButton.textContent = 'Mute'; 
+            muteButton.src = 'https://img.icons8.com/ios/100/1A1A1A/medium-volume--v1.png';
         }
     });
 
     muteButton.addEventListener('click', function() {
         audio.muted = !audio.muted;
-        this.textContent = audio.muted ? 'Unmute' : 'Mute'; 
+        muteButton.src = audio.muted ? 'https://img.icons8.com/ios/100/1A1A1A/mute--v1.png' : 'https://img.icons8.com/ios/100/1A1A1A/medium-volume--v1.png';
     });
 
     audio.addEventListener("timeupdate", function() {
