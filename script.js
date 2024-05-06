@@ -24,10 +24,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById("reset").addEventListener("click", function() {
+        audio.pause();  
         audio.currentTime = 0;
         updateProgressBar();
         updateTimeDisplay();
+        playButton.style.visibility = 'visible';
+        pauseButton.style.visibility = 'hidden';
     });
+    
 
     volumeControl.addEventListener('input', function() {
         audio.volume = this.value;
